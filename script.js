@@ -912,7 +912,7 @@ console.log("TEXT LOADED", text);
 
     let parts = text.split("█");
 
-
+console.log("isTyping =", isTyping);
     typeText(terminal, "\n\n" + parts[0], 20);
 setTimeout(() => {
 let button = document.createElement("span");
