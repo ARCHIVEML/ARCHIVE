@@ -910,15 +910,32 @@ LOADING...
             .then(text => {
 
 
-                typeText(
-                    terminal,
-                    "\n\n" + text,
-                    20
-                );
+    terminal.innerHTML += "\n\n" + text;
 
 
-            });
+    setTimeout(()=>{
 
+
+        let button = document.getElementById("secretImageButton");
+
+
+        if(button){
+
+
+            button.onclick = function(){
+
+                showSecretImage();
+
+            };
+
+
+        }
+
+
+    },15000);
+
+
+});
 
         },1500);
 
