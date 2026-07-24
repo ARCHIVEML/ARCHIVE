@@ -915,38 +915,19 @@ console.log("TEXT LOADED", text);
 
     terminal.innerHTML += "\n\n" + parts[0];
 
-
-setTimeout(()=>{
-
-
-        let button = document.createElement("span");
+let button = document.createElement("span");
 
 button.id = "secretImageButton";
-
 button.textContent = "█";
-
 button.style.cursor = "pointer";
 
-button.onclick = function(){
+button.onclick = showSecretImage;
 
-    console.log("CLICK WORKS");
-
-    showSecretImage();
-
-};
-
-console.log("BUTTON CREATED");
 terminal.appendChild(button);
 
+let afterText = document.createTextNode(parts[1] || "");
 
-if(parts[1]){
-
-    let afterText = document.createTextNode(parts[1]);
-
-    terminal.appendChild(afterText);
-
-}
-
+terminal.appendChild(afterText);
 
     }, 3000);
 
@@ -1022,51 +1003,47 @@ function showSecretImage(){
     let terminal = document.getElementById("terminal");
 
 
-    terminal.innerHTML +=
-`
-<br><br>
+    let loader = document.createElement("span");
+loader.id = "imageLoader";
 
-LOADING IMAGE...
+let img = document.createElement("img");
+img.src = "img/photo.png";
+img.id = "secretPhoto";
 
-<br>
-
-<div id="imageLoader">
-
-<img src="img/photo.png" id="secretPhoto">
-
-</div>
-
-`;
-
-
-
-    let img = document.getElementById("secretPhoto");
-
+loader.appendChild(img);
+terminal.appendChild(loader);
 
     img.onload = ()=>{
 
 
-        let height = img.naturalHeight;
+        img.style.width = "150px";
+img.style.height = "150px";
 
-        let current = 0;
+        img.style.objectFit = "cover";
+
+        img.style.clipPath = "inset(0 0 100% 0)";
 
 
-        img.style.height = "0px";
+        let progress = 0;
 
 
         let timer = setInterval(()=>{
 
 
-            current += height / 50;
+            progress += Math.random() * 20;
+
+let glitch = Math.random() * 10;
+
+            img.style.clipPath =
+        `inset(0 0 ${100-progress}% ${glitch}%)`;
 
 
-            img.style.height = current + "px";
+            if(progress >= 100){
 
 
-            if(current >= height){
+                img.style.clipPath =
+                "inset(0 0 0 0)";
 
-
-                img.style.height = "auto";
 
                 clearInterval(timer);
 
@@ -1074,7 +1051,7 @@ LOADING IMAGE...
             }
 
 
-        },50);
+        },120);
 
 
     };
