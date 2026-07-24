@@ -913,30 +913,44 @@ LOADING...
     let parts = text.split("█");
 
 
-    terminal.innerHTML += "\n\n" + parts[0];
+    typeText(
+        terminal,
+        "\n\n" + parts[0],
+        20
+    );
 
 
-    let button = document.createElement("span");
-
-    button.id = "secretImageButton";
-
-    button.innerHTML = "█";
-
-    terminal.appendChild(button);
+    setTimeout(()=>{
 
 
-    button.onclick = function(){
-
-        showSecretImage();
-
-    };
+        let button = document.createElement("span");
 
 
-    if(parts[1]){
+        button.id = "secretImageButton";
 
-        terminal.innerHTML += parts[1];
+        button.textContent = "█";
 
-    }
+        button.style.cursor = "pointer";
+
+
+        button.onclick = function(){
+
+            showSecretImage();
+
+        };
+
+
+        terminal.appendChild(button);
+
+
+        if(parts[1]){
+
+            terminal.innerHTML += parts[1];
+
+        }
+
+
+    }, 3000);
 
 
 });
