@@ -915,8 +915,8 @@ LOADING...
 
 
     text = text.replace(
-        "■",
-        `<span id="secretImageButton">■</span>`
+        "█",
+        `<span id="secretImageButton">█</span>`
     );
 
 
