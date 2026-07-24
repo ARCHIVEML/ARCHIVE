@@ -933,12 +933,13 @@ LOADING...
         button.style.cursor = "pointer";
 
 
-        button.onclick = function(){
+        button.addEventListener("click", function(){
 
-            showSecretImage();
+    showSecretImage();
 
-        };
+});
 
+console.log("BUTTON CREATED", button);
 
         terminal.appendChild(button);
 
