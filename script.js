@@ -910,29 +910,33 @@ LOADING...
             .then(text => {
 
 
-    terminal.innerHTML += "\n\n" + text;
+    let parts = text.split("█");
 
 
-    setTimeout(()=>{
+    terminal.innerHTML += "\n\n" + parts[0];
 
 
-        let button = document.getElementById("secretImageButton");
+    let button = document.createElement("span");
+
+    button.id = "secretImageButton";
+
+    button.innerHTML = "█";
+
+    terminal.appendChild(button);
 
 
-        if(button){
+    button.onclick = function(){
+
+        showSecretImage();
+
+    };
 
 
-            button.onclick = function(){
+    if(parts[1]){
 
-                showSecretImage();
+        terminal.innerHTML += parts[1];
 
-            };
-
-
-        }
-
-
-    },15000);
+    }
 
 
 });
