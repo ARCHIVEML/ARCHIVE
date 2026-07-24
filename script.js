@@ -877,53 +877,6 @@ localStorage.setItem("repeatUnlocked", "true");
         }
 
 
-       .then(text => {
-
-
-    typeText(
-        terminal,
-        "\n\n" + text,
-        20
-    );
-
-
-    setTimeout(()=>{
-
-
-        let textHTML = terminal.innerHTML;
-
-
-        terminal.innerHTML = textHTML.replace(
-            "█",
-            `<span id="secretImageButton">█</span>`
-        );
-
-
-        let square = document.getElementById("secretImageButton");
-
-
-        if(square){
-
-
-            square.onclick = function(){
-
-
-                showSecretImage();
-
-
-            };
-
-
-        }
-
-
-    },4000);
-
-
-
-});
-
-
         },1500);
 
 
