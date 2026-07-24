@@ -908,7 +908,7 @@ LOADING...
             .then(response => response.text())
 
             .then(text => {
-
+console.log("TEXT LOADED", text);
 
     let parts = text.split("█");
 
