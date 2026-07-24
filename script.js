@@ -913,8 +913,8 @@ console.log("TEXT LOADED", text);
     let parts = text.split("█");
 
 
-    terminal.innerHTML += "\n\n" + parts[0];
-
+    typeText(terminal, "\n\n" + parts[0], 20);
+setTimeout(() => {
 let button = document.createElement("span");
 
 button.id = "secretImageButton";
@@ -928,9 +928,10 @@ terminal.appendChild(button);
 let afterText = document.createTextNode(parts[1] || "");
 
 terminal.appendChild(afterText);
+}, parts[0].length * 20 + 300);
 
 });
-        },3000);
+       }, output.length * 20 + 500);
 
 
         return;
@@ -1005,20 +1006,14 @@ loader.id = "imageLoader";
 let img = document.createElement("img");
 img.src = "img/photo.png";
 img.id = "secretPhoto";
-
+img.style.width = "150px";
+img.style.height = "150px";
+img.style.objectFit = "cover";
+img.style.clipPath = "inset(0 0 100% 0)";
 loader.appendChild(img);
 terminal.appendChild(loader);
 
     img.onload = ()=>{
-
-
-        img.style.width = "150px";
-img.style.height = "150px";
-
-        img.style.objectFit = "cover";
-
-        img.style.clipPath = "inset(0 0 100% 0)";
-
 
         let progress = 0;
 
