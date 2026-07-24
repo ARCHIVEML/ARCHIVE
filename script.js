@@ -877,47 +877,7 @@ localStorage.setItem("repeatUnlocked", "true");
         }
 
 
-       else if(cmd == "INITIALIZE"){
-
-
-    if(repeatUnlocked){
-
-
-        output =
-`
-OPENING ARC-NULL...
-
-
-ACCESSING RECOVERED DATA...
-
-
-LOADING...
-
-
-`;
-
-
-        typeText(
-            terminal,
-            output,
-            20
-        );
-
-
-        setTimeout(()=>{
-
-
-            fetch("data/code.txt")
-
-            .then(response => response.text())
-
-            .then(text => {
-
-
-    text = text.replace(
-        "█",
-        `<span id="secretImageButton">█</span>`
-    );
+       .then(text => {
 
 
     typeText(
@@ -930,25 +890,24 @@ LOADING...
     setTimeout(()=>{
 
 
-        let square = document.getElementById("secretImageButton");
+        let square = [...terminal.querySelectorAll("*")]
+        .find(el => el.textContent === "█");
 
 
         if(square){
 
+            square.id = "secretImageButton";
 
             square.onclick = function(){
 
-
                 showSecretImage();
 
-
             };
-
 
         }
 
 
-    },1500);
+    },3000);
 
 
 
