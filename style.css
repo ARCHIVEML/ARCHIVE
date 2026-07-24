@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 
+html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-
-html{
-    scroll-behavior:smooth;
 }
 
 
@@ -681,11 +682,13 @@ body::after{
 
 #secretPhoto{
 
-    width:100%;
+    width:150px;
+
+    height:150px;
 
     display:block;
 
-    object-fit:contain;
+    object-fit:cover;
 
 }
 
