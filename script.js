@@ -872,11 +872,6 @@ localStorage.setItem("repeatUnlocked", "true");
 
             }
 
-
-
-        }
-
-
         else if(cmd == "INITIALIZE"){
 
 
