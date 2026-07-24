@@ -925,24 +925,22 @@ LOADING...
 
         let button = document.createElement("span");
 
+button.id = "secretImageButton";
 
-        button.id = "secretImageButton";
+button.textContent = "█";
 
-        button.textContent = "█";
+button.style.cursor = "pointer";
 
-        button.style.cursor = "pointer";
+button.onclick = function(){
 
-
-        button.addEventListener("click", function(){
+    console.log("CLICK WORKS");
 
     showSecretImage();
 
-});
+};
 
-console.log("BUTTON CREATED", button);
-
-        terminal.appendChild(button);
-
+console.log("BUTTON CREATED");
+terminal.appendChild(button);
 
         if(parts[1]){
 
