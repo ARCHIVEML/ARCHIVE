@@ -913,14 +913,10 @@ console.log("TEXT LOADED", text);
     let parts = text.split("█");
 
 
-    typeText(
-        terminal,
-        "\n\n" + parts[0],
-        20
-    );
+    terminal.innerHTML += "\n\n" + parts[0];
 
 
-    setTimeout(()=>{
+setTimeout(()=>{
 
 
         let button = document.createElement("span");
