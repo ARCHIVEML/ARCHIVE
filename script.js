@@ -877,6 +877,52 @@ localStorage.setItem("repeatUnlocked", "true");
         }
 
 
+        else if(cmd == "INITIALIZE"){
+
+
+    if(repeatUnlocked){
+
+
+        output =
+`
+OPENING ARC-NULL...
+
+
+ACCESSING RECOVERED DATA...
+
+
+LOADING...
+
+`;
+
+
+        typeText(
+            terminal,
+            output,
+            20
+        );
+
+
+        setTimeout(()=>{
+
+
+            fetch("data/code.txt")
+
+            .then(response => response.text())
+
+            .then(text => {
+
+
+                typeText(
+                    terminal,
+                    "\n\n" + text,
+                    20
+                );
+
+
+            });
+
+
         },1500);
 
 
@@ -884,6 +930,7 @@ localStorage.setItem("repeatUnlocked", "true");
 
 
     }
+
 
     else{
 
