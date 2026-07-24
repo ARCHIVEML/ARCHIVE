@@ -890,24 +890,34 @@ localStorage.setItem("repeatUnlocked", "true");
     setTimeout(()=>{
 
 
-        let square = [...terminal.querySelectorAll("*")]
-        .find(el => el.textContent === "█");
+        let textHTML = terminal.innerHTML;
+
+
+        terminal.innerHTML = textHTML.replace(
+            "█",
+            `<span id="secretImageButton">█</span>`
+        );
+
+
+        let square = document.getElementById("secretImageButton");
 
 
         if(square){
 
-            square.id = "secretImageButton";
 
             square.onclick = function(){
 
+
                 showSecretImage();
 
+
             };
+
 
         }
 
 
-    },3000);
+    },4000);
 
 
 
