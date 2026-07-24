@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ML Archive Terminal</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div id="glitchOverlay"></div>
+
+
+<div id="screen">
+
+
+
+    <!-- LOGIN -->
+
+    <div id="login">
+
+
+        <div class="loginBox">
+
+
+            <h1>ML ARCHIVE</h1>
+
+
+            <p>
+                AUTHORIZATION REQUIRED
+            </p>
+
+
+
+            <input
+                id="pw"
+                type="password"
+                autocomplete="off"
+                spellcheck="false"
+                autofocus
+            >
+
+
+
+            <button onclick="login()">
+
+                LOGIN
+
+            </button>
+
+
+
+            <p id="msg"></p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- BOOT -->
+
+
+    <div id="boot" class="hidden">
+
+
+        <pre id="bootlog"></pre>
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- ARCHIVE TERMINAL -->
+
+
+    <div id="archive" class="hidden">
+
+
+        <div id="terminalFrame">
+
+
+            <div id="terminal">
+
+
+            </div>
+
+
+
+            <div id="inputArea">
+
+
+                <span>&gt;</span>
+
+
+                <input
+                    id="command"
+                    autocomplete="off"
+                    spellcheck="false"
+                    onkeydown="
+                    if(event.key === 'Enter')
+                    runCommand();
+                    "
+                >
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>

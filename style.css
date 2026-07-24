@@ -1,0 +1,673 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    background:#000;
+
+    color:#7b0000;
+
+    font-family:'Share Tech Mono', monospace;
+
+    overflow-y:auto;
+
+    min-height:100vh;
+
+}
+
+
+/* ОСНОВНОЙ ЭКРАН */
+
+#screen{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+
+
+/* СКРЫТИЕ */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+
+/* =====================
+        LOGIN
+===================== */
+
+
+#login{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.loginBox{
+
+    width:460px;
+
+    border:2px solid #4b0000;
+
+    padding:45px;
+
+    text-align:center;
+
+    background:#050505;
+
+    box-shadow:
+
+    0 0 15px #500,
+
+    inset 0 0 20px #200;
+
+}
+
+
+
+.loginBox h1{
+
+    margin-bottom:15px;
+
+    color:#aa0000;
+
+    letter-spacing:4px;
+
+    text-shadow:
+
+    0 0 8px #700;
+
+}
+
+
+
+.loginBox p{
+
+    margin-bottom:20px;
+
+    color:#7d0000;
+
+}
+
+
+
+.loginBox input{
+
+    width:100%;
+
+    height:50px;
+
+    background:#020202;
+
+    border:2px solid #660000;
+
+    color:#b00000;
+
+    padding:12px;
+
+    font-size:20px;
+
+    text-align:center;
+
+    font-family:'Share Tech Mono', monospace;
+
+    outline:none;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.loginBox input:focus{
+
+    box-shadow:
+
+    0 0 12px #700,
+
+    inset 0 0 10px #300;
+
+}
+
+
+
+.loginBox button{
+
+    width:100%;
+
+    height:45px;
+
+    background:#120000;
+
+    border:2px solid #700;
+
+    color:#b00000;
+
+    cursor:pointer;
+
+    font-family:'Share Tech Mono', monospace;
+
+    font-size:18px;
+
+}
+
+
+
+.loginBox button:hover{
+
+    background:#2b0000;
+
+    box-shadow:
+
+    0 0 15px #700;
+
+}
+
+
+
+#msg{
+
+    margin-top:15px;
+
+    min-height:22px;
+
+}
+
+
+
+/* =====================
+        BOOT
+===================== */
+
+
+#boot{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+#bootlog{
+
+    color:#8b0000;
+
+    font-size:18px;
+
+    white-space:pre-wrap;
+
+    text-shadow:
+
+    0 0 5px #700;
+
+}
+
+
+
+/* =====================
+        TERMINAL
+===================== */
+
+
+#archive{
+
+    width:100%;
+
+    min-height:100vh;
+
+}
+
+
+
+#terminalFrame{
+
+    border:2px solid #550000;
+
+    padding:25px;
+
+    min-height:100vh;
+
+    background:#020202;
+
+    box-shadow:
+
+    0 0 20px #500,
+
+    inset 0 0 20px #200;
+
+}
+
+
+
+#terminal{
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    line-height:1.55;
+
+    font-size:18px;
+
+    color:#8b0000;
+
+    text-shadow:
+
+    0 0 5px #700;
+
+    padding-bottom:25px;
+
+}
+
+
+
+/* INPUT */
+
+#inputArea{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+#inputArea span{
+
+    color:#aa0000;
+
+    font-size:20px;
+
+}
+
+
+
+#command{
+
+    flex:1;
+
+    height:45px;
+
+    background:#000;
+
+    border:2px solid #600;
+
+    color:#b30000;
+
+    font-size:18px;
+
+    padding:12px;
+
+    font-family:'Share Tech Mono', monospace;
+
+    outline:none;
+
+}
+
+
+
+#command:focus{
+
+    box-shadow:
+
+    0 0 10px #700;
+
+}
+
+
+
+/* CRT */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    repeating-linear-gradient(
+
+        to bottom,
+
+        rgba(255,255,255,.02),
+
+        rgba(255,255,255,.02) 2px,
+
+        transparent 2px,
+
+        transparent 4px
+
+    );
+
+    opacity:.15;
+
+    z-index:5;
+
+}
+
+
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        transparent 55%,
+
+        rgba(0,0,0,.55)
+
+    );
+
+    z-index:6;
+
+}
+
+
+
+/* GLITCH */
+
+
+#glitchOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.glitch #glitchOverlay{
+
+    opacity:1;
+
+}
+
+
+
+/* АДАПТИВ */
+
+@media(max-width:700px){
+
+
+    #screen{
+
+        padding:15px;
+
+    }
+
+
+    .loginBox{
+
+        width:100%;
+
+        padding:30px;
+
+    }
+
+
+}
+/* =====================
+        GLITCH EFFECT
+===================== */
+
+
+#glitchOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    z-index:999;
+
+    mix-blend-mode:screen;
+
+}
+
+
+
+.glitch #glitchOverlay{
+
+    opacity:1;
+
+    animation:noise .08s infinite;
+
+    background:
+
+    repeating-linear-gradient(
+
+        0deg,
+
+        transparent 0,
+
+        transparent 2px,
+
+        rgba(180,0,0,.25) 3px,
+
+        transparent 4px
+
+    );
+
+}
+
+
+
+.glitch{
+
+    animation:
+
+    shake .08s infinite,
+
+    flash .18s infinite;
+
+}
+
+
+
+.glitch #terminal{
+
+    filter:blur(.4px);
+
+}
+
+
+
+.glitch #terminalFrame{
+
+    transform:skewX(.5deg);
+
+}
+
+
+
+
+
+@keyframes noise{
+
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+
+    20%{
+
+        transform:translate(-3px,2px);
+
+    }
+
+
+    40%{
+
+        transform:translate(2px,-2px);
+
+    }
+
+
+    60%{
+
+        transform:translate(-4px,1px);
+
+    }
+
+
+    80%{
+
+        transform:translate(3px,-1px);
+
+    }
+
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+
+
+
+
+@keyframes shake{
+
+
+    0%{
+
+        transform:translate(0);
+
+    }
+
+
+    20%{
+
+        transform:translate(-2px,1px);
+
+    }
+
+
+    40%{
+
+        transform:translate(2px,-1px);
+
+    }
+
+
+    60%{
+
+        transform:translate(-1px,2px);
+
+    }
+
+
+    80%{
+
+        transform:translate(2px,1px);
+
+    }
+
+
+    100%{
+
+        transform:translate(0);
+
+    }
+
+}
+
+
+
+
+
+@keyframes flash{
+
+
+    0%{
+
+        filter:brightness(1);
+
+    }
+
+
+    50%{
+
+        filter:brightness(1.15);
+
+    }
+
+
+    100%{
+
+        filter:brightness(1);
+
+    }
+
+}
