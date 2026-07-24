@@ -929,12 +929,8 @@ let afterText = document.createTextNode(parts[1] || "");
 
 terminal.appendChild(afterText);
 
-    }, 3000);
-
-
 });
-
-        },1500);
+        },3000);
 
 
         return;
