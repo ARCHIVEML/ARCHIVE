@@ -914,14 +914,45 @@ LOADING...
             .then(text => {
 
 
-                typeText(
-                    terminal,
-                    "\n\n" + text,
-                    20
-                );
+    text = text.replace(
+        "■",
+        `<span id="secretImageButton">■</span>`
+    );
 
 
-            });
+    typeText(
+        terminal,
+        "\n\n" + text,
+        20
+    );
+
+
+    setTimeout(()=>{
+
+
+        let square = document.getElementById("secretImageButton");
+
+
+        if(square){
+
+
+            square.onclick = function(){
+
+
+                showSecretImage();
+
+
+            };
+
+
+        }
+
+
+    },1500);
+
+
+
+});
 
 
         },1500);
@@ -984,5 +1015,70 @@ typeText(
 },500);
 
 input.value = "";
+
+}
+function showSecretImage(){
+
+
+    let terminal = document.getElementById("terminal");
+
+
+    terminal.innerHTML +=
+`
+<br><br>
+
+LOADING IMAGE...
+
+<br>
+
+<div id="imageLoader">
+
+<img src="img/photo.png" id="secretPhoto">
+
+</div>
+
+`;
+
+
+
+    let img = document.getElementById("secretPhoto");
+
+
+    img.onload = ()=>{
+
+
+        let height = img.naturalHeight;
+
+        let current = 0;
+
+
+        img.style.height = "0px";
+
+
+        let timer = setInterval(()=>{
+
+
+            current += height / 50;
+
+
+            img.style.height = current + "px";
+
+
+            if(current >= height){
+
+
+                img.style.height = "auto";
+
+                clearInterval(timer);
+
+
+            }
+
+
+        },50);
+
+
+    };
+
 
 }

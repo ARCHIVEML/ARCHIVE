@@ -671,3 +671,31 @@ body::after{
     }
 
 }
+
+#secretImageButton{
+
+    cursor:pointer;
+
+}
+
+
+#secretPhoto{
+
+    width:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+}
+
+
+#imageLoader{
+
+    width:100%;
+
+    overflow:hidden;
+
+    margin-top:20px;
+
+}
