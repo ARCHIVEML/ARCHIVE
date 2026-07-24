@@ -942,11 +942,14 @@ button.onclick = function(){
 console.log("BUTTON CREATED");
 terminal.appendChild(button);
 
-        if(parts[1]){
 
-            terminal.innerHTML += parts[1];
+if(parts[1]){
 
-        }
+    let afterText = document.createTextNode(parts[1]);
+
+    terminal.appendChild(afterText);
+
+}
 
 
     }, 3000);
