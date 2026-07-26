@@ -1,5 +1,5 @@
 
-const PASSWORD = "OWL";
+const PASSWORD = "LOW";
 
 console.log("NEW SCRIPT LOADED");
 let searchProtocolEnabled = false;
