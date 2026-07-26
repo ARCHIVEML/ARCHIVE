@@ -912,23 +912,31 @@ console.log("TEXT LOADED", text);
 
     let parts = text.split("█");
 
-console.log("isTyping =", isTyping);
-    typeText(terminal, "\n\n" + parts[0], 20);
-setTimeout(() => {
-let button = document.createElement("span");
 
-button.id = "secretImageButton";
-button.textContent = "█";
-button.style.cursor = "pointer";
+   typeText(terminal, "\n\n" + parts[0], 20);
 
-button.onclick = showSecretImage;
+let wait = ("\n\n" + parts[0]).length * 20 + 100;
 
-terminal.appendChild(button);
+let check = setInterval(() => {
 
-let afterText = document.createTextNode(parts[1] || "");
+    if (!isTyping) {
 
-terminal.appendChild(afterText);
-}, parts[0].length * 20 + 300);
+        clearInterval(check);
+
+        let button = document.createElement("span");
+        button.id = "secretImageButton";
+        button.textContent = "█";
+        button.style.cursor = "pointer";
+        button.onclick = showSecretImage;
+
+        terminal.appendChild(button);
+
+        let afterText = document.createTextNode(parts[1] || "");
+        terminal.appendChild(afterText);
+
+    }
+
+}, 50);
 
 });
        }, output.length * 20 + 500);
