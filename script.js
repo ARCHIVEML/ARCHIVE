@@ -1,5 +1,5 @@
 
-const PASSWORD = "LOW";
+const PASSWORD = "TSEFLOW";
 
 console.log("NEW SCRIPT LOADED");
 let searchProtocolEnabled = false;
